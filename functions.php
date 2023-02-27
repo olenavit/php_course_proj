@@ -71,3 +71,17 @@ function fetch_array($result)
 {
     return mysqli_fetch_array($result);
 }
+
+
+/****************************FRONT END FUNCTIONS************************/
+
+
+function count_all_records($table)
+{
+    return mysqli_num_rows(query('SELECT * FROM ' . $table));
+}
+
+function count_all_products_in_stock()
+{
+    return mysqli_num_rows(query('SELECT * FROM products WHERE product_quantity >= 1'));
+}
